@@ -699,6 +699,7 @@ ul#filters li{
 }
 .portfolio img {
     width: 100%;
+    height: initial;
 }
 
 .portfolio:hover .works-img{

@@ -13,6 +13,7 @@
 
         <!-- Favicon and Touch Icons -->
         <link href="wp-content/themes/startit/images/favicon.png" rel="shortcut icon" type="image/png">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
         <!-- Lead Style -->
 
@@ -32,7 +33,7 @@
                 <div class="container">
                     <nav id="flexmenu">
                         <div class="logo">
-                            <a href="index.html"><img src="wp-content/themes/startit/images/logo.png" alt="logo"></a>
+                            <a href="index.html"><img src="<?php echo get_field('logo', 'option'); ?>" alt="logo"></a>
                         </div>
                         <div class="nav-inner">
                             <div id="mobile-toggle" class="mobile-btn"></div>

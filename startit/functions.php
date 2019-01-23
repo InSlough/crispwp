@@ -77,3 +77,101 @@ unset( $sizes['large']);
 return $sizes;
 }
 add_filter('intermediate_image_sizes_advanced', 'sgr_filter_image_sizes');
+
+add_theme_support( 'post-thumbnails' );
+
+add_action( 'init', 'true_register_post_type_init' ); // Использовать функцию только внутри хука
+
+function true_register_post_type_init() {
+$labels = array(
+'name' => 'Services',
+'singular_name' => 'Services', // админ панель Добавить->Функцию
+'add_new' => 'Add Services',
+'add_new_item' => 'Addd new Services', // заголовок тега <title>
+'edit_item' => 'Edit Services',
+'new_item' => 'New Services',
+'all_items' => 'All Services',
+'view_item' => 'View services in site',
+'search_items' => 'Search Services',
+'not_found' => 'Services not found',
+'not_found_in_trash' => 'In trash not services',
+'menu_name' => 'Services' // ссылка в меню в админке
+);
+$args = array(
+'labels' => $labels,
+'public' => true,
+'show_ui' => true, // показывать интерфейс в админке
+'has_archive' => true,
+'menu_icon' => get_stylesheet_directory_uri() .'/img/function_icon.png', // иконка в меню
+// 'menu_position' => 20, // порядок в меню
+'supports' => array( 'title', 'editor', 'author')
+);
+register_post_type('services', $args);
+}
+
+add_action( 'init', 'true_register_post_type_init2' );
+
+function true_register_post_type_init2() {
+$labels = array(
+'name' => 'Portfolio',
+'singular_name' => 'Portfolio', // админ панель Добавить->Функцию
+'add_new' => 'Add Portfolio',
+'add_new_item' => 'Addd new Portfolio', // заголовок тега <title>
+'edit_item' => 'Edit Portfolio',
+'new_item' => 'New Portfolio',
+'all_items' => 'All Portfolio',
+'view_item' => 'View portfolio in site',
+'search_items' => 'Search Portfolio',
+'not_found' => 'Portfolio not found',
+'not_found_in_trash' => 'In trash not portfolio',
+'menu_name' => 'Portfolio' // ссылка в меню в админке
+);
+$args = array(
+'labels' => $labels,
+'public' => true,
+'show_ui' => true, // показывать интерфейс в админке
+'has_archive' => true,
+'menu_icon' => get_stylesheet_directory_uri() .'/img/function_icon.png', // иконка в меню
+// 'menu_position' => 20, // порядок в меню
+'supports' => array( 'title', 'editor', 'author', 'thumbnail')
+);
+register_post_type('portfolio', $args);
+}
+
+add_action( 'init', 'create_book_taxonomies' );
+
+// функция, создающая 2 новые таксономии "genres" и "writers" для постов типа "book"
+function create_book_taxonomies(){
+
+  // Добавляем древовидную таксономию 'genre' (как категории)
+  register_taxonomy('portfolio category', array('portfolio'), array(
+    'hierarchical'  => true,
+    'labels'        => array(
+      'name'              => _x( 'Portfolio Categorys', 'taxonomy general name' ),
+      'singular_name'     => _x( 'Portfolio Category', 'taxonomy singular name' ),
+      'search_items'      =>  __( 'Search Portfolio Category' ),
+      'all_items'         => __( 'All Portfolio Category' ),
+      'parent_item'       => __( 'Parent Portfolio Category' ),
+      'parent_item_colon' => __( 'Parent Portfolio Category:' ),
+      'edit_item'         => __( 'Edit Portfolio Category' ),
+      'update_item'       => __( 'Update Portfolio Category' ),
+      'add_new_item'      => __( 'Add New Portfolio Category' ),
+      'new_item_name'     => __( 'New Portfolio Category Name' ),
+      'menu_name'         => __( 'Portfolio Category' ),
+    ),
+    'show_ui'       => true,
+    'query_var'     => true,
+    //'rewrite'       => array( 'slug' => 'the_genre' ), // свой слаг в URL
+  ));
+}
+
+function ea_acf_options_page() {
+if ( function_exists( 'acf_add_options_page' ) ) {
+acf_add_options_page( array(
+'title'      => 'Site Options',
+'capability' => 'manage_options',
+) );
+}
+}
+
+ if( function_exists('acf_add_options_page') ) { acf_add_options_page(); }
