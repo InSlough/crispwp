@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Янв 23 2019 г., 10:12
+-- Время создания: Янв 23 2019 г., 10:37
 -- Версия сервера: 5.6.38
 -- Версия PHP: 5.5.38
 
@@ -255,7 +255,6 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (297, '_transient_feed_mod_d117b5738fbd35bd8c0391cda1f2b5d9', '1548189825', 'no'),
 (298, '_transient_timeout_dash_v2_f69de0bbfe7eaa113146875f40c02000', '1548233025', 'no'),
 (299, '_transient_dash_v2_f69de0bbfe7eaa113146875f40c02000', '<div class=\"rss-widget\"><ul><li><a class=\'rsswidget\' href=\'https://ru.wordpress.org/news/2019/01/wp-moscow-5-%D1%82%D0%BE%D0%BD%D0%BA%D0%BE%D1%81%D1%82%D0%B8-%D0%BF%D1%80%D0%BE%D0%B4%D0%B0%D0%B6-gutenberg-%D0%B8-acf/\'>WP Moscow #5 | Тонкости продаж, Gutenberg и ACF</a></li></ul></div><div class=\"rss-widget\"><ul><li><a class=\'rsswidget\' href=\'https://wordpress.org/news/2019/01/wordpress-5-1-beta-2/\'>Dev Blog: WordPress 5.1 Beta 2</a></li><li><a class=\'rsswidget\' href=\'https://wptavern.com/wpml-alleges-former-employee-breached-website-and-took-customer-emails\'>WPTavern: WPML Alleges Former Employee Breached Website and Took Customer Emails</a></li><li><a class=\'rsswidget\' href=\'https://wptavern.com/wpml-website-hacked-customer-emails-compromised\'>WPTavern: WPML Website Hacked, Customer Emails Compromised</a></li></ul></div>', 'no'),
-(306, 'portfolio category_children', 'a:0:{}', 'yes'),
 (318, 'options_logo', '54', 'no'),
 (319, '_options_logo', 'field_5c47aa46e8884', 'no'),
 (320, 'options_tell', '+ 123 - 456 -789, + 987 - 654 - 321', 'no'),
@@ -292,7 +291,8 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (355, 'options_soc_3_soci', 'fab fa-skype', 'no'),
 (356, '_options_soc_3_soci', 'field_5c47ab3de888b', 'no'),
 (357, 'options_soc_3_socl', 'index.html#', 'no'),
-(358, '_options_soc_3_socl', 'field_5c48088a39657', 'no');
+(358, '_options_soc_3_socl', 'field_5c48088a39657', 'no'),
+(360, 'portfolio category_children', 'a:0:{}', 'yes');
 
 -- --------------------------------------------------------
 
@@ -1790,7 +1790,7 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (1494, 132, '_edit_lock', '1548193221:1'),
 (1495, 132, '_thumbnail_id', '71'),
 (1496, 133, '_edit_last', '1'),
-(1497, 133, '_edit_lock', '1548192809:1'),
+(1497, 133, '_edit_lock', '1548228504:1'),
 (1498, 133, '_thumbnail_id', '64'),
 (1499, 122, '_wp_old_slug', 'web-designing'),
 (1500, 120, '_wp_old_slug', 'art-direction-2'),
@@ -2279,7 +2279,7 @@ CREATE TABLE `wp_terms` (
 INSERT INTO `wp_terms` (`term_id`, `name`, `slug`, `term_group`) VALUES
 (1, 'Без рубрики', '%d0%b1%d0%b5%d0%b7-%d1%80%d1%83%d0%b1%d1%80%d0%b8%d0%ba%d0%b8', 0),
 (2, 'Menu', 'menu', 0),
-(3, 'Web Design', 'web_design', 0),
+(3, 'Web Design', 'web', 0),
 (4, 'Art Direction', 'art_direction', 0),
 (5, 'Creative', 'creative', 0),
 (6, 'WordPress', 'wordpress', 0),
@@ -2566,7 +2566,7 @@ ALTER TABLE `wp_links`
 -- AUTO_INCREMENT для таблицы `wp_options`
 --
 ALTER TABLE `wp_options`
-  MODIFY `option_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=360;
+  MODIFY `option_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=361;
 
 --
 -- AUTO_INCREMENT для таблицы `wp_postmeta`
