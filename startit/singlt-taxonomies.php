@@ -1,17 +1,64 @@
- <?php get_header(); ?>
+<!DOCTYPE html>
+<html lang="zxx">
+    <head>
+        <!-- Meta Tags -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+        <meta name="description" content="Carrby - Agency Template">
+        <meta name="author" content="">
+
+        <!-- Page Title -->
+        <title>Carrby - Agency Template</title>
+
+        <!-- Favicon and Touch Icons -->
+        <link href="images/favicon.png" rel="shortcut icon" type="image/png">
+        <link href="http://wpthemebooster.com/demo/themeforest/html/carrby/images/apple-touch-icon.png" rel="apple-touch-icon">
+        <link href="http://wpthemebooster.com/demo/themeforest/html/carrby/images/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72">
+        <link href="http://wpthemebooster.com/demo/themeforest/html/carrby/images/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114">
+        <link href="http://wpthemebooster.com/demo/themeforest/html/carrby/images/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144">
+
+        <!-- Lead Style -->
+        <link href="css/style.css" rel="stylesheet" type="text/css">
+
+    </head>
+
+    <body>
+
+        <!-- Start Header -->
+        <header id="header" class="inner-header">
+            <div class="navigation">
+                <div class="container">
+                    <nav id="flexmenu">
+                        <div class="logo">
+                            <a href="index.html"><img src="images/logo2.png" alt="logo"></a>
+                        </div>
+                        <div class="nav-inner">
+                            <div id="mobile-toggle" class="mobile-btn"></div>
+                            <ul class="main-menu">
+                                <li class="menu-item"><a class="active" href="index.html#slider">Home</a></li>
+                                <li class="menu-item"><a href="index.html#services">Services</a></li>
+                                <li class="menu-item"><a href="index.html#about">About Us</a></li>
+                                <li class="menu-item"><a href="index.html#works">Portfolio</a></li>
+                                <li class="menu-item"><a href="index.html#blog">Blog</a></li>
+                                <li class="menu-item"><a href="index.html#contact">Contact</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </header>
 
         <div class="main-wrapper">
-            <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-
             <section class="inner-page">
                 <div class="container">
                     <div class="singlepage-details-content">
                         <div class="portfolio-details-img">
-                            <? the_post_thumbnail(); ?>
+                            <img src="images/portfolio/portfolio-details.jpg" alt="img">
                         </div>
                         <div class="portfolio-details">
                             <div class="full_content">
-                                <h6><?php the_title(); ?></h6>
+                                <h6>Lorem ipsum dolor sit</h6>
                                 <h2 class="project_title">Mobile Interface for shoe.corp</h2>
                                 <p>Ut enim ad minima veniam, quis nostrum exercitationem corporate loorem commosequatur? Quis aut em vel eum iure veniam, quis nostruction dolorsequatur? Quis autem vel eum Quis autem vel eum iure veniam lorem quis nostru iure.Ut enim ad minima veniam, quis nostrum exercitationem corporate loo rem commosequatur? Quis aut em vel eum iure veniam, quis nostruction dolorsequatur? Quis autemvel eum Quis autem vel eum iure veniam lorem quis nostru iure.</p>
 
@@ -24,9 +71,6 @@
                     </div>
                 </div>
             </section>
-
-             <?php endwhile; ?>
-            <?php endif; ?>
 
             <section class="video-banner">
                 <div class="container">
@@ -87,55 +131,63 @@
             <section id="testimonials" class="testimonials testimonials1">
                 <div class="container">
                     <div class="owl-carousel owl-theme testimonial_carousel">
-                        <?php
-
-                            $posts = get_posts(array(
-                                'posts_per_page'    => -1,
-                                'post_type'         => 'testmonial'
-                            ));
-
-                            if( $posts ): ?>
-
-                                <ul>
-
-                                <?php foreach( $posts as $post ):
-
-                                    setup_postdata( $post );
-
-                                    ?>
-
                         <div class="item">
                             <div class="testibox">
                                 <div class="testi-img">
-                                    <img src="<?php the_field( "testi-img" ); ?>" alt="">
+                                    <img src="images/testimonial/reviewer-1.png" alt="">
                                 </div>
                                 <div class="testi-content">
                                     <ul>
-
-                                        <?php
-                                             if(have_rows('testi-star') ):
-                                             while( have_rows('testi-star') ): the_row();  ?>
-
-                                              <li><i class="ion-ios-<?php the_sub_field( "ios-star" ); ?>"></i></li>
-                                                      <?php endwhile;
-                                               endif;
-                                            ?>
+                                        <li><i class="ion-ios-star"></i></li>
+                                        <li><i class="ion-ios-star"></i></li>
+                                        <li><i class="ion-ios-star"></i></li>
+                                        <li><i class="ion-ios-star"></i></li>
+                                        <li><i class="ion-ios-star"></i></li>
                                     </ul>
-                                    <p><?php the_field( "testimonial-feed" ); ?></p>
-                                    <h4><?php the_field( "testimonial-name" ); ?></h4>
-                                    <h6><?php the_field( "testimonial-position" ); ?></h6>
+                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accntium oloremque laudantium, totam rem aperiam, eaque ipsa ab illo inventore veritatis et quasi rchitecto beatae vitae dictaexplicabo. Nemo enim voluptatem quia.Sed ut perspiciatis unde omnis iste natus error sit voluptatem </p>
+                                    <h4>Jeny Doe</h4>
+                                    <h6>CEO, Advertising Corp</h6>
                                 </div>
                             </div>
                         </div>
-
-                                <?php endforeach; ?>
-
-                                </ul>
-
-                                <?php wp_reset_postdata(); ?>
-
-                            <?php endif; ?>
-
+                        <div class="item">
+                            <div class="testibox">
+                                <div class="testi-img">
+                                    <img src="images/testimonial/reviewer-1.png" alt="">
+                                </div>
+                                <div class="testi-content">
+                                    <ul>
+                                        <li><i class="ion-ios-star"></i></li>
+                                        <li><i class="ion-ios-star"></i></li>
+                                        <li><i class="ion-ios-star"></i></li>
+                                        <li><i class="ion-ios-star"></i></li>
+                                        <li><i class="ion-ios-star-half"></i></li>
+                                    </ul>
+                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accntium oloremque laudantium, totam rem aperiam, eaque ipsa ab illo inventore veritatis et quasi rchitecto beatae vitae dictaexplicabo. Nemo enim voluptatem quia.Sed ut perspiciatis unde omnis iste natus error sit voluptatem </p>
+                                    <h4>Jeny Doe</h4>
+                                    <h6>CEO, Advertising Corp</h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="testibox">
+                                <div class="testi-img">
+                                    <img src="images/testimonial/reviewer-1.png" alt="">
+                                </div>
+                                <div class="testi-content">
+                                    <ul>
+                                        <li><i class="ion-ios-star"></i></li>
+                                        <li><i class="ion-ios-star"></i></li>
+                                        <li><i class="ion-ios-star"></i></li>
+                                        <li><i class="ion-ios-star-half"></i></li>
+                                        <li><i class="ion-ios-star-outline"></i></li>
+                                    </ul>
+                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accntium oloremque laudantium, totam rem aperiam, eaque ipsa ab illo inventore veritatis et quasi rchitecto beatae vitae dictaexplicabo. Nemo enim voluptatem quia.Sed ut perspiciatis unde omnis iste natus error sit voluptatem </p>
+                                    <h4>Jeny Doe</h4>
+                                    <h6>CEO, Advertising Corp</h6>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -211,7 +263,27 @@
 
         </div><!-- End Main Wrapper-->
 
-        <?php get_template_part('parts/content/contact');?>
+        <footer id="footer" class="footer">
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="copyright">
+                        <p> &copy; 2018 - carrby.agency. Created by <a href="portfolio-details.html#">WP ThemeBooster</a> All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
 
 
-        <?php get_footer(); ?>
+        <!-- All JavaScript Files
+        ================================================== -->
+        <script src="js/jquery-3.2.1.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery.mixitup.min.js"></script>
+        <script src="js/jquery.fancybox.min.js"></script>
+        <script src="js/owl.carousel.js"></script>
+        <script src="js/typed.min.js"></script>
+        <script src="js/menu.js"></script>
+        <script src="js/custom.js"></script>
+
+    </body>
+</html>

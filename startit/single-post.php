@@ -48,7 +48,7 @@ echo $category[0]->cat_name;?>"><? echo $category[0]->cat_name;?></a></h4>
                             <div class="row">
                                 <div class="col-md-6">
                                 <div class="inner-post prev_post">
-                                    <img src="images/blog/blog-2.jpg" alt="img">
+                                    <?php echo get_the_post_thumbnail($prev_post->ID, array(100,100) );?>
                                 <div class="post_block">
                                     <h4><a class="link_to" href="<?php echo get_permalink( $prev_post->ID ); ?>">
                                                 <?php _e( 'Previous post', '' ); ?>
@@ -61,7 +61,7 @@ echo $category[0]->cat_name;?>"><? echo $category[0]->cat_name;?></a></h4>
                                 </div>
                                 <div class="col-md-6">
                                 <div class="inner-post next_post">
-                                    <img src="<?php get_the_post_thumbnail_url($next_post->ID,''); ?>" alt="img">
+                                    <?php echo get_the_post_thumbnail($next_post->ID, array(100,100) );?>
                                     <div class="post_block">
                                     <h4><a class="link_to" href="<?php echo get_permalink( $next_post->ID ); ?>">
                                                 <?php _e( 'Next post', '' ); ?>

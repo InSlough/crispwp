@@ -139,51 +139,61 @@ $args = array(
 register_post_type('portfolio', $args);
 }
 
-add_action( 'init', 'create_book_taxonomies' );
+add_action( 'init', 'true_register_post_type_init3' );
+
+function true_register_post_type_init3() {
+$labels = array(
+'name' => 'Testmonial',
+'singular_name' => 'Testmonial', // админ панель Добавить->Функцию
+'add_new' => 'Add Testmonial',
+'add_new_item' => 'Addd new Testmonial', // заголовок тега <title>
+'edit_item' => 'Edit Testmonial',
+'new_item' => 'New Testmonial',
+'all_items' => 'All Testmonial',
+'view_item' => 'View Testmonial in site',
+'search_items' => 'Search Testmonial',
+'not_found' => 'Testmonial not found',
+'not_found_in_trash' => 'In trash not Testmonial',
+'menu_name' => 'Testmonial' // ссылка в меню в админке
+);
+$args = array(
+'labels' => $labels,
+'public' => true,
+'show_ui' => true, // показывать интерфейс в админке
+'has_archive' => true,
+'menu_icon' => get_stylesheet_directory_uri() .'/img/function_icon.png', // иконка в меню
+// 'menu_position' => 20, // порядок в меню
+'supports' => array( 'title', 'editor', 'author', 'thumbnail')
+);
+register_post_type('testmonial', $args);
+}
+
+add_action( 'init', 'create_book_testmonial' );
 
 // функция, создающая 2 новые таксономии "genres" и "writers" для постов типа "book"
-function create_book_taxonomies(){
+function create_book_testmonial(){
 
   // Добавляем древовидную таксономию 'genre' (как категории)
-  register_taxonomy('portfolio category', array('portfolio'), array(
+  register_taxonomy('testmonial_category', array('testmonial'), array(
     'hierarchical'  => true,
     'labels'        => array(
-      'name'              => _x( 'Portfolio Categorys', 'taxonomy general name' ),
-      'singular_name'     => _x( 'Portfolio Category', 'taxonomy singular name' ),
-      'search_items'      =>  __( 'Search Portfolio Category' ),
-      'all_items'         => __( 'All Portfolio Category' ),
-      'parent_item'       => __( 'Parent Portfolio Category' ),
-      'parent_item_colon' => __( 'Parent Portfolio Category:' ),
-      'edit_item'         => __( 'Edit Portfolio Category' ),
-      'update_item'       => __( 'Update Portfolio Category' ),
-      'add_new_item'      => __( 'Add New Portfolio Category' ),
-      'new_item_name'     => __( 'New Portfolio Category Name' ),
-      'menu_name'         => __( 'Portfolio Category' ),
+      'name'              => _x( 'Testmonial Categorys', 'taxonomy general name' ),
+      'singular_name'     => _x( 'Testmonial Category', 'taxonomy singular name' ),
+      'search_items'      =>  __( 'Search Testmonial Category' ),
+      'all_items'         => __( 'All Testmonial Category' ),
+      'parent_item'       => __( 'Parent Testmonial Category' ),
+      'parent_item_colon' => __( 'Parent Testmonial Category:' ),
+      'edit_item'         => __( 'Edit Testmonial Category' ),
+      'update_item'       => __( 'Update Testmonial Category' ),
+      'add_new_item'      => __( 'Add New Testmonial Category' ),
+      'new_item_name'     => __( 'New Testmonial Category Name' ),
+      'menu_name'         => __( 'Testmonial Category' ),
     ),
     'show_ui'       => true,
     'query_var'     => true,
     //'rewrite'       => array( 'slug' => 'the_genre' ), // свой слаг в URL
   ));
 
-    register_taxonomy('services_category', array('services'), array(
-    'hierarchical'  => true,
-    'labels'        => array(
-      'name'              => _x( 'Services Categorys', 'taxonomy general name' ),
-      'singular_name'     => _x( 'Services Category', 'taxonomy singular name' ),
-      'search_items'      =>  __( 'Search Services Category' ),
-      'all_items'         => __( 'All Services Category' ),
-      'parent_item'       => __( 'Parent Services Category' ),
-      'parent_item_colon' => __( 'Parent Services Category:' ),
-      'edit_item'         => __( 'Edit Services Category' ),
-      'update_item'       => __( 'Update Services Category' ),
-      'add_new_item'      => __( 'Add New Services Category' ),
-      'new_item_name'     => __( 'New Services Category Name' ),
-      'menu_name'         => __( 'Services Category' ),
-    ),
-    'show_ui'       => true,
-    'query_var'     => true,
-    //'rewrite'       => array( 'slug' => 'the_genre' ), // свой слаг в URL
-  ));
 }
 
 function ea_acf_options_page() {
@@ -210,3 +220,15 @@ function register_my_widgets(){
   ) );
 }
 add_action( 'widgets_init', 'register_my_widgets' );
+
+function my_search_form( $form ) {
+  $form = '<form role="search" method="get" id="searchform" class="sidebar_search_form" action="' . home_url( '/' ) . '" >
+  <label class="screen-reader-text" for="s">' . __( 'Search for:' ) . '</label>
+  <input type="text" value="' . get_search_query() . '" name="search" id="s" class="form-control" placeholder="Search" />
+  <button type="submit" class="form-control form-control-submit" value="'. esc_attr__( 'Search' ) .'"><i class="ion-ios-search"></i></button>
+  </form>';
+
+  return $form;
+}
+
+add_filter( 'get_search_form', 'my_search_form' );

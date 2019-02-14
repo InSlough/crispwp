@@ -15,11 +15,11 @@
                                     <div class="post_header">
 
                                         <h4 class="post_cat">Category : <a href="<?$category = get_the_category();
-echo $category[0]->cat_name;?>"><? echo $category[0]->cat_name;?></a></h4>
+                                        echo $category[0]->cat_name;?>"><? echo $category[0]->cat_name;?></a></h4>
                                         <h2 class="post_title"> <?php the_title(); ?></h2>
                                     </div>
                                     <div class="post_img">
-                                        <? the_post_thumbnail(  ); ?>
+                                        <? the_post_thumbnail(); ?>
                                     </div>
                                     <div class="post_content">
                                         <div class="full_content">
@@ -48,7 +48,7 @@ echo $category[0]->cat_name;?>"><? echo $category[0]->cat_name;?></a></h4>
                             <div class="row">
                                 <div class="col-md-6">
                                 <div class="inner-post prev_post">
-                                    <img src="images/blog/blog-2.jpg" alt="img">
+                                    <?php echo get_the_post_thumbnail($prev_post->ID, array(100,100) );?>
                                 <div class="post_block">
                                     <h4><a class="link_to" href="<?php echo get_permalink( $prev_post->ID ); ?>">
                                                 <?php _e( 'Previous post', '' ); ?>
