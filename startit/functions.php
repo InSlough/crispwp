@@ -202,10 +202,11 @@ function register_my_widgets(){
   register_sidebar( array(
     'name'          => 'Sidebar',
     'id'            => 'my_sidebar',
-    'before_widget' => '<div>',
+    'class'         => 'sidebar',
+    'before_widget' => '<div class="widget">',
     'after_widget'  => '</div>',
-    'before_title'  => '<h2 class="rounded">',
-    'after_title'   => '</h2>',
+    'before_title'  => '<ul> <li>',
+    'after_title'   => '</li> <ul>',
   ) );
 }
 add_action( 'widgets_init', 'register_my_widgets' );

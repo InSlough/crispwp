@@ -14,7 +14,8 @@
                                  <article class="blog_post post-box">
                                     <div class="post_header">
 
-                                        <h4 class="post_cat">Category :<?the_category()?><?php the_title(); ?></a></h4>
+                                        <h4 class="post_cat">Category : <a href="<?$category = get_the_category();
+echo $category[0]->cat_name;?>"><? echo $category[0]->cat_name;?></a></h4>
                                         <h2 class="post_title"> <?php the_title(); ?></h2>
                                     </div>
                                     <div class="post_img">

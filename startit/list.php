@@ -5,7 +5,7 @@
 ?>
 <?php get_header(); ?>
 
-    div class="main-wrapper">
+    <div class="main-wrapper">
             <section class="inner-page">
                 <div class="container">
                     <div class="row">
@@ -19,7 +19,8 @@
 
                                       <article class="blog_post">
                                             <div class="post_header">
-                                                <h4 class="post_cat">Category : <a href="<?the_category()?>">Company</a></h4>
+                                                <h4 class="post_cat">Category : <a href="<?$category = get_the_category();
+echo $category[0]->cat_name;?>"><? echo $category[0]->cat_name;?></a></h4>
                                                 <h2 class="post_title"><a href="blog.html#"><?php the_title(); ?></a></h2>
                                             </div>
                                             <div class="">
