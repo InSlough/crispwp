@@ -60,13 +60,24 @@ echo $category[0]->cat_name;?>"><? echo $category[0]->cat_name;?></a></h4>
 
 
         <?php wp_reset_postdata(); ?>
+                    <?php wp_reset_postdata(); ?>
 
     </article></div></div>
 <div class="col-md-5 col-lg-4 sidebar">
+                            </article></div></div>
+                        <div class="col-md-5 col-lg-4 sidebar">
 
                                 <?php
                                 if ( function_exists('dynamic_sidebar') )
                                     dynamic_sidebar('my_sidebar');
                                 ?>
                         </div>
-<?php get_footer(); ?>
+<?php get_footer(); ?>                      </div>
+                    </div>
+                  </section>
+                </div>
+
+<?php get_template_part('parts/content/contact');?>
+
+
+        <?php get_footer(); ?>
