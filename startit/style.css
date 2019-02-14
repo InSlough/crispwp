@@ -1565,10 +1565,10 @@ h4.widget_title:after{
 }
 
 /*-----------------------*/
-.searchform{
+.sidebar_search_form{
     position: relative;
 }
-.searchform{
+.sidebar_search_form .form-control{
     height: 50px;
     border: 1px solid #f4f4f4;
     border-radius: 0;
@@ -1576,11 +1576,11 @@ h4.widget_title:after{
     box-shadow: none;
     color: #000;
 }
-.searchform .form-control:focus{
+.sidebar_search_form .form-control:focus{
     outline: none;
     box-shadow: none;
 }
-.searchform .form-control-submit{
+.sidebar_search_form .form-control-submit{
     position: absolute;
     right: 0;
     width: auto;
