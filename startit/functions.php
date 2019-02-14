@@ -51,11 +51,17 @@ wp_enqueue_style( 'carousel' );
 wp_register_style( 'theme', get_template_directory_uri() . '/css/owl.theme.default.css', array(),'1', 'all' );
 wp_enqueue_style( 'theme' );
 
-wp_register_style( 'font-awesome', get_template_directory_uri() . 'css/fonts/font-awesome/css/font-awesome.css', array(),'1', 'all' );
+wp_register_style( 'font-awesome', get_template_directory_uri() . '/css/fonts/font-awesome/css/font-awesome.css', array(),'1', 'all' );
 wp_enqueue_style( 'font-awesome' );
 
-wp_register_style( 'ionicon', get_template_directory_uri() . 'css/fonts/ionicons/css/ionicon.css', array(),'1', 'all' );
+wp_register_style( 'ionicon', get_template_directory_uri() . '/css/fonts/ionicons/css/ionicon.css', array(),'1', 'all' );
 wp_enqueue_style( 'ionicon' );
+
+wp_register_style( 'ionicon-font', get_template_directory_uri() . '/css/fonts/ionicons/fonts/ionicons.woff_v=4.3.0', array(),'1', 'all' );
+wp_enqueue_style( 'ionicon-font' );
+
+wp_register_style( 'ionicon-font2', get_template_directory_uri() . '/css/fonts/ionicons/fonts/ionicons.woff2_v=4.3.0', array(),'1', 'all' );
+wp_enqueue_style( 'ionicon-font2' );
 
 wp_register_style( 'style', get_template_directory_uri() . '/style.css', array(),'1', 'all' );
 wp_enqueue_style( 'style' );
