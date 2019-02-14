@@ -206,7 +206,7 @@ function register_my_widgets(){
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
     'after_widget'  => '</div>',
     'before_title'  => '<h4 class="widget_title"><span>',
-    'after_title'   => '</span></h4><div class="%2$s">',
+    'after_title'   => '</span></h4><div class=" %2$s">',
   ) );
 }
 add_action( 'widgets_init', 'register_my_widgets' );
