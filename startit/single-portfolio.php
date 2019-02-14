@@ -86,8 +86,7 @@
 
             <section id="testimonials" class="testimonials testimonials1">
                 <div class="container">
-                    <div class="owl-carousel owl-theme testimonial_carousel">
-                        <?php
+                    <?php
 
                             $posts = get_posts(array(
                                 'posts_per_page'    => -1,
@@ -103,6 +102,8 @@
                                     setup_postdata( $post );
 
                                     ?>
+                    <div class="owl-carousel owl-theme testimonial_carousel">
+
 
                         <div class="item">
                             <div class="testibox">
@@ -113,12 +114,11 @@
                                     <ul>
 
                                         <?php
-                                             if(have_rows('testi-star') ):
                                              while( have_rows('testi-star') ): the_row();  ?>
 
                                               <li><i class="ion-ios-<?php the_sub_field( "ios-star" ); ?>"></i></li>
                                                       <?php endwhile;
-                                               endif;
+
                                             ?>
                                     </ul>
                                     <p><?php the_field( "testimonial-feed" ); ?></p>
