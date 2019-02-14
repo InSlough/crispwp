@@ -1,17 +1,19 @@
 /*
-Theme Name:
-Version:
-Author:
-Author URI:
-Description:
+Theme Name: 
+Version: 
+Author: 
+Author URI: 
+Description: 
 */
 /*	IE 10 Fix*/
 
-(function($) {
-    'use strict';
-    jQuery(document).ready(function() {
+(function ($) {
+	'use strict';
+	
+	jQuery(document).ready(function () {
+
         //Sticky menu add class
-        $(window).scroll(function() {
+        $(window).scroll(function() {    
             var scroll = $(window).scrollTop();
 
             if (scroll >= 150) {
@@ -33,7 +35,7 @@ Description:
         });
 
         //Smooth Scroll To Anchor
-        $(document).on('click', 'a[href^="#"]', function(event) {
+        $(document).on('click', 'a[href^="#"]', function (event) {
             var top;
             var $anchor = $(this);
             $('html, body').stop().animate({
@@ -42,30 +44,34 @@ Description:
             event.preventDefault();
         });
 
-        //Active Menu Item on Page Scroll
-        var sections = $('section'),
-            nav = $('header'),
-            nav_height = nav.outerHeight();
 
-        $(window).on('scroll', function() {
-            var cur_pos = $(this).scrollTop();
 
-            sections.each(function() {
-                var top = $(this).offset().top - 140,
-                    bottom = top + $(this).outerHeight();
-
-                if (cur_pos >= top && cur_pos <= bottom) {
-                    nav.find('a').removeClass('active');
-                    sections.removeClass('active');
-
-                    $(this).addClass('active');
-                    nav.find('a[href="#' + $(this).attr('id') + '"]').addClass('active');
-                }
-            });
+        //Active Menu Item on Page Scroll            
+        var sections = $('section')
+          , nav = $('header')
+          , nav_height = nav.outerHeight();
+         
+        $(window).on('scroll', function () {
+          var cur_pos = $(this).scrollTop();
+         
+          sections.each(function() {
+            var top = $(this).offset().top - 140,
+                bottom = top + $(this).outerHeight();
+         
+            if (cur_pos >= top && cur_pos <= bottom) {
+              nav.find('a').removeClass('active');
+              sections.removeClass('active');
+         
+              $(this).addClass('active');
+              nav.find('a[href="#'+$(this).attr('id')+'"]').addClass('active');
+            }
+          });
         });
 
-        // Slider Carousel
-        $('.slider_carousel').owlCarousel({
+
+
+		// Slider Carousel
+		$('.slider_carousel').owlCarousel({
             items: 1,
             loop: true,
             center: true,
@@ -78,9 +84,10 @@ Description:
             nav: false,
             navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
         })
+        
 
-        // Testimonial Carousel
-        $('.testimonial_carousel').owlCarousel({
+		// Testimonial Carousel
+		$('.testimonial_carousel').owlCarousel({
             items: 1,
             loop: true,
             margin: 0,
@@ -119,29 +126,31 @@ Description:
             }
         })
 
+
         // Mixitup Portfolio
-        $('#filters').on('click', 'li', function() {
-            var filterValue = $(this).attr('data-filter');
+        $('#filters').on( 'click', 'li', function() {
+          var filterValue = $( this ).attr('data-filter');
         });
         $('#portfoliolist').mixItUp({
             selectors: {
                 target: '.portfolio',
-                filter: '.filter'
+                filter: '.filter' 
             },
             load: {
-                filter: '*'
-            }
+                filter: '*'  
+            }     
         });
+
 
         // Popup Video
         $('.fancybox-media').fancybox({
-            openEffect: 'none',
-            closeEffect: 'none',
-            helpers: {
-                media: {}
-            }
+          openEffect  : 'none',
+          closeEffect : 'none',
+          helpers : {
+            media : {}
+          }
         });
 
-    });
-
+ 	});
+	
 })(jQuery);

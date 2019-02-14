@@ -69,6 +69,7 @@ add_image_size ('slider-thumb', 180, 180, true);
 add_image_size ('single-post-thumb', 275, 75, false);
 add_image_size ('archive-thumb', 300, 150, true);
 add_image_size ('special-thumb', 279, 133, true);
+add_image_size ('list', 750, 550, true);
 
 function sgr_filter_image_sizes( $sizes) {
 unset( $sizes['thumbnail']);
@@ -163,6 +164,26 @@ function create_book_taxonomies(){
     'query_var'     => true,
     //'rewrite'       => array( 'slug' => 'the_genre' ), // свой слаг в URL
   ));
+
+    register_taxonomy('services_category', array('services'), array(
+    'hierarchical'  => true,
+    'labels'        => array(
+      'name'              => _x( 'Services Categorys', 'taxonomy general name' ),
+      'singular_name'     => _x( 'Services Category', 'taxonomy singular name' ),
+      'search_items'      =>  __( 'Search Services Category' ),
+      'all_items'         => __( 'All Services Category' ),
+      'parent_item'       => __( 'Parent Services Category' ),
+      'parent_item_colon' => __( 'Parent Services Category:' ),
+      'edit_item'         => __( 'Edit Services Category' ),
+      'update_item'       => __( 'Update Services Category' ),
+      'add_new_item'      => __( 'Add New Services Category' ),
+      'new_item_name'     => __( 'New Services Category Name' ),
+      'menu_name'         => __( 'Services Category' ),
+    ),
+    'show_ui'       => true,
+    'query_var'     => true,
+    //'rewrite'       => array( 'slug' => 'the_genre' ), // свой слаг в URL
+  ));
 }
 
 function ea_acf_options_page() {
@@ -175,3 +196,16 @@ acf_add_options_page( array(
 }
 
  if( function_exists('acf_add_options_page') ) { acf_add_options_page(); }
+
+
+function register_my_widgets(){
+  register_sidebar( array(
+    'name'          => 'Sidebar',
+    'id'            => 'my_sidebar',
+    'before_widget' => '<div>',
+    'after_widget'  => '</div>',
+    'before_title'  => '<h2 class="rounded">',
+    'after_title'   => '</h2>',
+  ) );
+}
+add_action( 'widgets_init', 'register_my_widgets' );

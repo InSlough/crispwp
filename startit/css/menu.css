@@ -73,7 +73,7 @@
 .logo img{
     max-width: 100%;
 }
-#flexmenu .nav-inner > .nav-menu1 > ul.main-menu{
+#flexmenu .nav-inner > ul.main-menu{
     margin-bottom: 0px;
     transition-property: color;
     transition-duration: 0.5s;
@@ -120,7 +120,7 @@
 #flexmenu .nav-inner ul.main-menu > li:last-child{
     padding-right: 0px;
 }
-#flexmenu .nav-inner > .nav-menu1 > ul.main-menu > li > a:after {
+#flexmenu .nav-inner > ul.main-menu > li > a:after {
     content: "";
     position: absolute;
     left: 50%;
@@ -134,13 +134,13 @@
     transform: translateX(-50%);
     transition: width 0.25s ease-out;
 }
-#flexmenu .nav-inner > .nav-menu1 > ul.main-menu > li.current-menu-item > a:after,
-#flexmenu .nav-inner > .nav-menu1 > ul.main-menu > li > a:hover:after {
+#flexmenu .nav-inner > ul.main-menu > li > a.active:after,
+#flexmenu .nav-inner > ul.main-menu > li > a:hover:after {
     width: 70px;
     transition: width 0.25s ease-in;
 }
 
-#flexmenu .nav-inner > .nav-menu1 > ul.main-menu > li.menu-item-has-children > a i{
+#flexmenu .nav-inner > ul.main-menu > li.menu-item-has-children > a i{
     padding-left: 10px;
     font-size: 10px;
 }
@@ -162,7 +162,7 @@
     min-width: 220px;
     padding-left: 0px;
 }
-#flexmenu .nav-inner > .nav-menu1 > ul.main-menu > li ul {
+#flexmenu .nav-inner > ul.main-menu > li ul {
     background: transparent;
     padding-top: 30px;
     transition-property: color;
@@ -170,7 +170,7 @@
     transition-timing-function: ease-in;
     transition-delay: 0.3s;
 }
-.header.sticky #flexmenu .nav-inner > .nav-menu1 > ul.main-menu > li ul {
+.header.sticky #flexmenu .nav-inner > ul.main-menu > li ul {
     padding-top: 25px;
 }
 #flexmenu .nav-inner li:hover > ul {
@@ -233,7 +233,7 @@
     #flexmenu .nav-inner{
         padding: 0px 0px;
     }
-    #flexmenu .nav-inner > .nav-menu1 > ul.main-menu > li.menu-item-has-children > a i{
+    #flexmenu .nav-inner > ul.main-menu > li.menu-item-has-children > a i{
         display: none;
     }
   /* Hamburger */
@@ -282,7 +282,7 @@
         height: 2px;
         transform: rotate(-45deg);
     }
-    .mobile-btn.menu-opened:after {
+    .mobile-btn.menu-opened:after { 
         top: 16px;
         border: 0;
         width: 20px;
@@ -295,7 +295,7 @@
         display: none;
         width: 100%;
     }
-    #flexmenu .nav-inner > .nav-menu1 > ul.main-menu{
+    #flexmenu .nav-inner > ul.main-menu{
         padding-left: 30px;
         padding-top: 10px;
         padding-bottom: 30px;
@@ -303,8 +303,8 @@
         padding-right: 30px;
         margin-top: 20px;
     }
-    #flexmenu .nav-inner > .nav-menu1 > ul.main-menu > li > ul,
-    .header.sticky #flexmenu .nav-inner > .nav-menu1 > ul.main-menu > li ul{
+    #flexmenu .nav-inner > ul.main-menu > li > ul,
+    .header.sticky #flexmenu .nav-inner > ul.main-menu > li ul{
         padding-top: 0px;
     }
 
@@ -329,19 +329,19 @@
         border: 0;
         border-bottom: 1px solid rgba(229, 232, 236, 0.3);
     }
-    #flexmenu .nav-inner > .nav-menu1 > ul.main-menu > li > a:before{
+    #flexmenu .nav-inner > ul.main-menu > li > a:before{
         display: none;
     }
-
+    
     .header.sticky .navigation #flexmenu .nav-inner li a.active,
-    #flexmenu .nav-inner > .nav-menu1 > ul.main-menu > li > a.active,
-    #flexmenu .nav-inner > .nav-menu1 > ul.main-menu > li > a:hover{
+    #flexmenu .nav-inner > ul.main-menu > li > a.active,
+    #flexmenu .nav-inner > ul.main-menu > li > a:hover{
         color: #ff5530;
         border-radius: 0px;
         border: 0;
         border-bottom: 1px solid rgba(229, 232, 236, 0.3);
     }
-    #flexmenu .nav-inner > .nav-menu1 > ul.main-menu > li > a:after {
+    #flexmenu .nav-inner > ul.main-menu > li > a:after {
         display: none;
         left: 0;
         margin-top: 0px;
@@ -352,7 +352,7 @@
     }
     #flexmenu .nav-inner ul.main-menu ul li,
     #flexmenu .nav-inner li:hover > ul > li {
-        height: auto;
+        height: auto;  
     }
     #flexmenu .nav-inner ul.main-menu ul li a{
         padding-left: 25px;
@@ -388,13 +388,13 @@
     #flexmenu .nav-inner ul.main-menu ul ul li a.active {
         border-left: none;
     }
-    #flexmenu .nav-inner > .nav-menu1 > ul.main-menu > li.menu-item-has-children > ul > li.focus > a,
-    #flexmenu .nav-inner > .nav-menu1 > ul.main-menu ul > li.menu-item-has-children > ul > li.focus > a {
+    #flexmenu .nav-inner > ul.main-menu > li.menu-item-has-children > ul > li.focus > a,
+    #flexmenu .nav-inner > ul.main-menu ul > li.menu-item-has-children > ul > li.focus > a {
         background: #262626;
     }
   /* remove cross when menu item is toggled */
-    #flexmenu .nav-inner > .nav-menu1 > ul.main-menu > li.menu-item-has-children > a:after,
-    #flexmenu .nav-inner > .nav-menu1 > ul.main-menu > li.menu-item-has-children > a:before,
+    #flexmenu .nav-inner > ul.main-menu > li.menu-item-has-children > a:after,
+    #flexmenu .nav-inner > ul.main-menu > li.menu-item-has-children > a:before,
     #flexmenu .nav-inner ul.main-menu ul > li.menu-item-has-children > a:after,
     #flexmenu .nav-inner ul.main-menu ul > li.menu-item-has-children > a:before {
         display: none;
